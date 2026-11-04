@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayubowan Trails</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+:root{--maroon:#8D153A;--gold:#EAB200;--green:#00534E;--teal:#0E7C86;--tea:#5B8C3A;--cin:#A0522D;--bg:#FFF6E5;--card:#fff;--ink:#2B2B2B;--mute:#6b5f55;--line:#ead9b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1416;--card:#2a1d20;--ink:#f6e9d2;--mute:#c4b199;--line:#4a3438}}
+:root[data-theme="dark"]{--bg:#1d1416;--card:#2a1d20;--ink:#f6e9d2;--mute:#c4b199;--line:#4a3438}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 'Noto Sans','Noto Sans Sinhala','Noto Sans Tamil',system-ui,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:'Playfair Display','Noto Serif Sinhala',Georgia,serif;margin:0;line-height:1.15}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+.hero{background:linear-gradient(160deg,var(--gold) -40%,var(--maroon) 55%,#5a0c25);color:#fff;padding:22px 0 26px;position:relative;overflow:hidden;border-radius:0 0 28px 28px}
+.hero svg.moon{position:absolute;right:-70px;top:-50px;width:280px;opacity:.28}
+.hero h1{font-size:34px;font-weight:800}.hero p{margin:6px 0 16px;opacity:.92}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.top button{background:#ffffff26;color:#fff;border:0;border-radius:20px;padding:6px 12px;font:inherit;cursor:pointer}
+.search{background:var(--card);color:var(--ink);border-radius:16px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.search input,.search select,.f input,.f select{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.search .go{grid-column:1/3}
+.btn{background:var(--maroon);color:#fff;border:0;border-radius:12px;padding:11px 16px;font:600 15px 'Noto Sans',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn.alt{background:var(--green)}.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 4px;text-align:center;font-size:12px;cursor:pointer;color:var(--ink)}
+.cat b{display:block;font-size:24px}
+.sec{margin:22px 0 10px;display:flex;align-items:center;gap:10px}.sec h2{font-size:22px;color:var(--maroon)}
+:root[data-theme=dark] .sec h2,:root:not([data-theme=light]) .sec h2{color:var(--gold)}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]) .sec h2{color:var(--maroon)}}
+.sec:after{content:"";flex:1;height:8px;background:radial-gradient(circle at 4px 4px,var(--gold) 2.5px,transparent 3px) 0 0/12px 8px repeat-x;opacity:.8}
+.rail{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}
+.rail .card{min-width:230px;scroll-snap-align:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 3px 12px #8d153a14;margin-bottom:12px}
+.pic{height:110px;display:flex;align-items:flex-end;justify-content:space-between;padding:10px;color:#fff;font-size:40px;position:relative}
+.pic span{font:600 12px 'Noto Sans',sans-serif;background:#0006;border-radius:10px;padding:2px 8px}
+.body{padding:12px 14px 14px}.body h3{font-size:18px;margin-bottom:3px}.mute{color:var(--mute);font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.tag{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:2px 10px;font-size:12px}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:10px}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:14px 0 6px}.chip{white-space:nowrap;border:1.5px solid var(--green);color:var(--green);background:transparent;border-radius:20px;padding:5px 14px;font:inherit;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--green);color:#fff}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:3px solid var(--gold);display:flex;padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav button{flex:1;border:0;background:none;color:var(--mute);padding:9px 0 8px;font:12px 'Noto Sans',sans-serif;cursor:pointer}
+nav button b{display:block;font-size:20px}nav button[aria-current=true]{color:var(--maroon);font-weight:600}
+:root[data-theme=dark] nav button[aria-current=true]{color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) nav button[aria-current=true]{color:var(--gold)}}
+.map{background:linear-gradient(#cfe9ec,#b5dce0);border-radius:18px;border:1px solid var(--line);width:100%}
+.dish{min-width:170px;padding:12px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.modal{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;justify-content:center;z-index:10}
+.modal.on{display:flex}.sheet{background:var(--bg);width:100%;max-width:560px;border-radius:24px 24px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px));max-height:92%;overflow:auto}
+.f{display:grid;gap:10px;margin:12px 0}.demo{background:var(--gold);color:#2B2B2B;border-radius:8px;padding:4px 10px;font-size:12px;display:inline-block}
+.lotus{font-size:64px;text-align:center;animation:bloom .9s ease-out}
+@keyframes bloom{from{transform:scale(.2) rotate(-40deg);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.lotus{animation:none}}
+.sw{display:flex;gap:6px;justify-content:flex-end}.sw button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:2px 10px;cursor:pointer}.sw button[aria-pressed=true]{background:var(--maroon);color:#fff}
+.demonote{font-size:12px;color:var(--mute);text-align:center;margin:18px 0}
+</style></head><body>
+<header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
+<div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><button id="cur" aria-label="Switch currency">LKR</button></div>
+<h1 id="greet">Ayubowan</h1><p>Stay, eat and explore the pearl of the Indian Ocean.</p>
+<div class="search"><select aria-label="Destination" id="dest"></select><input type="number" min="1" value="2" aria-label="Travellers"><input type="date" aria-label="Check in"><input type="date" aria-label="Check out"><button class="btn go" data-go="stay">Find stays</button></div></div></header>
+<main class="wrap" id="app" tabindex="-1"></main>
+<nav aria-label="Main"></nav>
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+<script>
+const $=(s,e=document)=>e.querySelector(s);
+const FX={LKR:1,USD:0.0033};let cur='LKR';try{cur=localStorage.getItem('cur')||'LKR'}catch(e){}
+const money=n=>cur==='USD'?'$'+Math.round(n*FX.USD):'LKR '+n.toLocaleString();
+const maps=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q+' Sri Lanka');
+const dirs=q=>'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(q+' Sri Lanka');
+const CITY={Colombo:[6.93,79.85],Kandy:[7.29,80.63],Sigiriya:[7.96,80.76],Ella:[6.87,81.05],Galle:[6.03,80.22],Mirissa:[5.95,80.46],'Nuwara Eliya':[6.97,80.77],Yala:[6.37,81.5],Jaffna:[9.66,80.01],Trincomalee:[8.57,81.23],'Arugam Bay':[6.84,81.83]};
+const PLACES=[
+{n:'Sigiriya Lion Rock',c:'Sigiriya',t:'Ancient cities',e:'🦁',g:'#A0522D,#8D153A',d:'A 5th-century rock fortress rising 200 m above the jungle, with mirror wall frescoes and lion-paw gateway.',fee:'USD 35',best:'Jan–Apr',h:'7:00–17:30',tip:'Go at sunrise. Cover shoulders for the nearby temple.'},
+{n:'Nine Arches Bridge',c:'Ella',t:'Hill country',e:'🚆',g:'#00534E,#5B8C3A',d:'A colonial-era viaduct curving through tea hills. Watch the blue train cross from the track-side path.',fee:'Free',best:'Jan–Mar, Jul–Sep',h:'Open all day',tip:'Check train times and stay off the rails.'},
+{n:'Galle Fort',c:'Galle',t:'Ancient cities',e:'🗼',g:'#0E7C86,#00534E',d:'A Dutch-era ramparts town with a lighthouse, boutiques and sea-view walks at sunset.',fee:'Free',best:'Dec–Apr',h:'Open all day',tip:'Walk the ramparts 30 minutes before sunset.'},
+{n:'Temple of the Tooth',c:'Kandy',t:'Temples',e:'🪷',g:'#EAB200,#A0522D',d:'Sri Lanka\'s most sacred Buddhist shrine, home to a relic of the Buddha. Puja ceremonies run morning and evening.',fee:'LKR 2,000',best:'Aug (Esala Perahera)',h:'5:30–20:00',tip:'Wear white or modest clothing and remove shoes and hats.'},
+{n:'Mirissa Whale Watching',c:'Mirissa',t:'Whale watching',e:'🐋',g:'#0E7C86,#0a4a63',d:'Boat trips to spot blue whales, sperm whales and dolphins off the south coast.',fee:'LKR 12,000',best:'Nov–Apr',h:'Departs 6:30',tip:'Choose an operator that keeps its distance from the whales. Take motion-sickness tablets.'},
+{n:'Yala National Park',c:'Yala',t:'National parks',e:'🐆',g:'#5B8C3A,#8D5a1a',d:'One of the world\'s densest leopard populations, plus elephants, sloth bears and peacocks.',fee:'USD 25 + jeep',best:'Feb–Jul',h:'6:00–18:00',tip:'Book a morning jeep safari and pack binoculars.'}];
+const HOTELS=[
+{n:'Heritage Fort Villa',c:'Galle',t:'Villa',e:'🏡',p:32000,r:4.8,a:['Pool','Breakfast','A/C'],fc:1,eco:0},
+{n:'Tea Estate Bungalow',c:'Nuwara Eliya',t:'Tea-estate stay',e:'🍃',p:24000,r:4.7,a:['Fireplace','Tea tour','Breakfast'],fc:1,eco:1},
+{n:'Lion Rock Eco Lodge',c:'Sigiriya',t:'Eco-lodge',e:'🌿',p:18500,r:4.6,a:['Pool','Solar power','Guide'],fc:1,eco:1},
+{n:'Ella Homestay',c:'Ella',t:'Homestay',e:'🏠',p:7500,r:4.9,a:['Home cooking','Wi-Fi','Train views'],fc:0,eco:1},
+{n:'Mirissa Beach Cabana',c:'Mirissa',t:'Beach bungalow',e:'🏖️',p:14000,r:4.5,a:['Beachfront','Surf lessons','Breakfast'],fc:1,eco:0}];
+const FOOD=[
+{n:'Ministry of Crab',c:'Colombo',t:'Seafood',e:'🦀',b:'$$$',diet:['Halal'],d:'Famous lagoon crab in a restored Dutch hospital.'},
+{n:'Hotel de Pilawoos',c:'Colombo',t:'Street food',e:'🥘',b:'$',diet:['Halal'],d:'Late-night kottu roti and milkshakes.'},
+{n:'Garden Café Kandy',c:'Kandy',t:'Vegetarian',e:'🥗',b:'$$',diet:['Vegetarian','Vegan'],d:'Rice and curry with leafy mallums and jackfruit.'},
+{n:'Cafe 92 Ella',c:'Ella',t:'Cafe',e:'☕',b:'$$',diet:['Vegetarian'],d:'Hoppers and Ceylon tea with a view of Little Adam\'s Peak.'},
+{n:'Lantern Rooftop Galle',c:'Galle',t:'Rooftop',e:'🌇',b:'$$$',diet:['Halal','Vegetarian'],d:'Sunset cocktails and grilled fish in the fort.'}];
+const DISHES=[['Rice & curry','🍛',2],['Kottu roti','🥘',3],['Hoppers','🥞',1],['Lamprais','🍃',2],['Pol sambol','🥥',3],['Ambul thiyal','🐟',3],['Watalappan','🍮',0],['King coconut','🥥',0]];
+const greets=['Ayubowan','Vanakkam','Welcome'];let gi=0;setInterval(()=>{gi=(gi+1)%3;$('#greet').textContent=greets[gi]},2600);
+const grad=g=>`background:linear-gradient(135deg,${g.split(',')[0]},${g.split(',')[1]})`;
+let tab='home',filter={stay:'All',eat:'All',pl:'All'},faves=new Set();
+const NAV=[['home','🏠','Home'],['stay','🛏️','Stay'],['places','🏯','Places'],['eat','🍛','Eat'],['map','🗺️','Map']];
+function drawNav(){$('nav').innerHTML=NAV.map(([k,i,l])=>`<button data-go="${k}" ${tab===k?'aria-current="true"':''}><b>${i}</b>${l}</button>`).join('')}
+function chips(list,key){return `<div class="chips">${['All',...list].map(x=>`<button class="chip" data-f="${key}|${x}" aria-pressed="${filter[key]===x}">${x}</button>`).join('')}</div>`}
+const placeCard=p=>`<article class="card"><div class="pic" style="${grad(p.g)}">${p.e}<span>${p.c}</span></div><div class="body"><h3>${p.n}</h3><div class="mute">${p.t} · Best ${p.best}</div><p>${p.d}</p><div class="tags"><span class="tag">Entry ${p.fee}</span><span class="tag">${p.h}</span></div><p class="mute">Tip: ${p.tip}</p><div class="row"><a class="btn ghost" target="_blank" rel="noopener" href="${maps(p.n)}">Open in Google Maps</a><a class="btn alt" target="_blank" rel="noopener" href="${dirs(p.n)}">Directions</a></div></div></article>`;
+const hotelCard=h=>`<article class="card"><div class="pic" style="${grad('#00534E,#0E7C86')}">${h.e}<span>★ ${h.r}</span></div><div class="body"><h3>${h.n}</h3><div class="mute">${h.t} · ${h.c}</div><div class="tags">${h.a.map(x=>`<span class="tag">${x}</span>`).join('')}${h.fc?'<span class="tag">Free cancellation</span>':''}${h.eco?'<span class="tag">🌱 Eco-friendly</span>':''}</div><div class="row"><div><b style="font-size:18px">${money(h.p)}</b><div class="mute">per night</div></div><div style="display:flex;gap:6px"><a class="btn ghost" target="_blank" rel="noopener" href="${maps(h.n+' '+h.c)}">Map</a><button class="btn" data-book="${h.n}">Book now</button></div></div></div></article>`;
+const foodCard=f=>`<article class="card"><div class="body"><h3>${f.e} ${f.n}</h3><div class="mute">${f.t} · ${f.c} · ${f.b}</div><p>${f.d}</p><div class="tags">${f.diet.map(x=>`<span class="tag">${x}</span>`).join('')}</div><a class="btn ghost" target="_blank" rel="noopener" href="${maps(f.n+' '+f.c)}">Open in Google Maps</a></div></article>`;
+function mapSvg(){const W=300,H=420,P=([la,lo])=>[((lo-79.6)/2.3*W).toFixed(0),((9.95-la)/4.1*H).toFixed(0)];
+const out=[[9.8,80.1],[9.5,80.9],[8.6,81.2],[7.7,81.7],[6.9,81.85],[6.2,81.4],[5.95,80.6],[6.4,80.0],[7.2,79.85],[8.2,79.8],[9.0,79.9]].map(P).join(' ');
+const pins=Object.entries(CITY).map(([n,ll])=>{const[x,y]=P(ll);return `<a href="${maps(n)}" target="_blank" rel="noopener"><circle cx="${x}" cy="${y}" r="7" fill="#8D153A" stroke="#EAB200" stroke-width="2.5"/><text x="${+x+10}" y="${+y+4}" font-size="11" fill="#2B2B2B" font-family="Noto Sans,sans-serif">${n}</text></a>`}).join('');
+return `<svg class="map" viewBox="0 0 ${W} ${H}" role="img" aria-label="Map of Sri Lanka with destinations"><polygon points="${out}" fill="#5B8C3A" stroke="#00534E" stroke-width="3" stroke-linejoin="round"/>${pins}</svg>`}
+function render(){drawNav();let h='';
+if(tab==='home'){h=`<div class="cats">${[['stay','🛏️','Stay'],['eat','🍛','Eat'],['places','🏯','Explore'],['map','🗺️','Map']].map(([k,i,l])=>`<button class="cat" data-go="${k}"><b>${i}</b>${l}</button>`).join('')}</div>
+<div class="sec"><h2>Trending this season</h2></div><div class="rail">${PLACES.slice(0,4).map(placeCard).join('')}</div>
+<div class="sec"><h2>Hidden gems</h2></div><div class="rail">${HOTELS.filter(x=>x.eco).map(hotelCard).join('')}</div>
+<div class="sec"><h2>Must-try dishes</h2></div><div class="rail">${DISHES.map(d=>`<div class="dish"><div style="font-size:30px">${d[1]}</div><b>${d[0]}</b><div class="mute">${d[2]?'🌶️'.repeat(d[2]):'Mild'}</div></div>`).join('')}</div>
+<div class="sec"><h2>Before you go</h2></div><div class="card"><div class="body"><p><b>Emergency:</b> Police 119 · Ambulance 1990 · Tourist Police +94 11 242 1052</p><p class="mute">Temples: remove shoes and hats, cover shoulders and knees, never pose with your back to a Buddha statue.</p></div></div>`}
+if(tab==='stay'){const ts=[...new Set(HOTELS.map(x=>x.t))];h=`<div class="sec"><h2>Where to stay</h2></div>${chips(ts,'stay')}${HOTELS.filter(x=>filter.stay==='All'||x.t===filter.stay).map(hotelCard).join('')}`}
+if(tab==='places'){const ts=[...new Set(PLACES.map(x=>x.t))];h=`<div class="sec"><h2>Places to visit</h2></div>${chips(ts,'pl')}${PLACES.filter(x=>filter.pl==='All'||x.t===filter.pl).map(placeCard).join('')}`}
+if(tab==='eat'){h=`<div class="sec"><h2>Where to eat</h2></div>${chips(['Halal','Vegetarian','Vegan'],'eat')}${FOOD.filter(x=>filter.eat==='All'||x.diet.includes(filter.eat)).map(foodCard).join('')||'<p class="mute">No spots match yet. Try another filter.</p>'}`}
+if(tab==='map'){h=`<div class="sec"><h2>Island map</h2></div>${mapSvg()}<p class="mute">Tap a pin to open it in Google Maps.</p>${[...PLACES.map(p=>p.n+'|'+p.c),...HOTELS.map(x=>x.n+'|'+x.c),...FOOD.map(x=>x.n+'|'+x.c)].map(s=>{const[n,c]=s.split('|');return `<div class="card"><div class="body row" style="margin:0"><div><b>${n}</b><div class="mute">${c}</div></div><a class="btn alt" target="_blank" rel="noopener" href="${dirs(n+' '+c)}">Directions</a></div></div>`}).join('')}`}
+$('#app').innerHTML=h+'<p class="demonote">🐘 Demo build. Sample data and mock payments only. Prices are illustrative.</p>';
+if(tab==='home'){const d=$('#dest');}}
+$('#dest').innerHTML='<option>Anywhere in Sri Lanka</option>'+Object.keys(CITY).map(c=>`<option>${c}</option>`).join('');
+function go(k){tab=k;render();window.scrollTo({top:0})}
+function book(n){const h=HOTELS.find(x=>x.n===n);$('#sheet').innerHTML=`<h2>Book ${h.n}</h2><span class="demo">Demo payment. No money is taken.</span><div class="f"><input type="date" aria-label="Check in"><input type="date" aria-label="Check out"><select aria-label="Guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select><input placeholder="Full name" aria-label="Full name"><input type="email" placeholder="Email" aria-label="Email"><input placeholder="Card number (any number)" aria-label="Card number" inputmode="numeric"></div><div class="row"><b>${money(h.p)} / night</b><button class="btn" id="pay">Confirm booking</button></div><p style="text-align:center"><button class="btn ghost" data-close>Cancel</button></p>`;$('#modal').classList.add('on')}
+function done(){const ref='AT-'+Math.random().toString(36).slice(2,8).toUpperCase();$('#sheet').innerHTML=`<div class="lotus">🪷</div><h2 style="text-align:center">Booking confirmed</h2><p style="text-align:center">Your reference is <b>${ref}</b>. Istuti, thank you!</p><p style="text-align:center"><button class="btn" data-close>Done</button></p>`}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go],[data-f],[data-book],[data-close],#pay,#cur,#modal');if(!t)return;
+if(t.dataset.go)go(t.dataset.go);
+else if(t.dataset.f){const[k,v]=t.dataset.f.split('|');filter[k]=v;render()}
+else if(t.dataset.book)book(t.dataset.book);
+else if(t.id==='pay')done();
+else if(t.id==='cur'){cur=cur==='LKR'?'USD':'LKR';t.textContent=cur;try{localStorage.setItem('cur',cur)}catch(x){}render()}
+else if(t.hasAttribute('data-close')||(t.id==='modal'&&e.target===t))$('#modal').classList.remove('on')});
+$('#cur').textContent=cur;render();
+</script></body></html>
