@@ -54,6 +54,22 @@ nav button b{display:block;font-size:20px}nav button[aria-current=true]{color:va
 @media (prefers-reduced-motion:reduce){.lotus{animation:none}}
 .sw{display:flex;gap:6px;justify-content:flex-end}.sw button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:2px 10px;cursor:pointer}.sw button[aria-pressed=true]{background:var(--maroon);color:#fff}
 .demonote{font-size:12px;color:var(--mute);text-align:center;margin:18px 0}
+
+/* Sri Lankan destination-inspired background artwork */
+body{
+ background-color:var(--bg);
+ background-image:
+  radial-gradient(ellipse at 8% 18%,rgba(234,178,0,.075),transparent 34%),
+  radial-gradient(ellipse at 92% 58%,rgba(14,124,134,.07),transparent 32%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='460' viewBox='0 0 460 460'%3E%3Cg fill='none' stroke='%238D153A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='.28'%3E%3Cpath d='M15 340 Q85 260 150 330 T290 320 T445 330 M10 365 Q90 300 170 355 T330 350 T460 360'/%3E%3Cpath d='M275 145 L315 70 L355 145 Z M295 145 L315 108 L335 145 M270 145 H360 M285 158 H345'/%3E%3Cpath d='M65 120 C65 92 91 76 120 82 C143 87 155 105 151 128 L145 150 L128 150 L126 132 L111 132 L107 151 L88 151 L86 131 L70 131 Z M150 112 Q177 105 179 126 Q177 142 159 140 M78 91 Q60 72 69 58'/%3E%3Cpath d='M370 260 Q345 240 350 214 Q377 220 382 244 Q388 217 414 210 Q420 240 392 259 Q420 252 432 270 Q405 286 382 270 Q365 289 342 278 Q348 261 370 260 Z'/%3E%3Cpath d='M215 235 Q230 205 245 235 Q260 205 275 235 Q245 225 245 260 Q245 225 215 235 Z M245 260 V285 M230 278 Q245 268 260 278'/%3E%3Cpath d='M30 420 Q70 390 110 420 M350 420 Q390 390 430 420'/%3E%3C/g%3E%3C/svg%3E");
+ background-size:auto,auto,460px 460px;
+ background-attachment:fixed;
+}
+.hero{background-image:linear-gradient(145deg,rgba(234,178,0,.88),rgba(141,21,58,.96) 48%,rgba(0,83,78,.96)),radial-gradient(circle at 82% 25%,rgba(255,255,255,.2),transparent 28%);}
+.hero:after{content:'🐘   🪷   🦚';position:absolute;left:18px;bottom:5px;font-size:23px;letter-spacing:9px;opacity:.20;pointer-events:none;filter:grayscale(.25)}
+.card,.dish,.cat{box-shadow:0 5px 18px rgba(75,35,28,.055)}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .22s ease,box-shadow .22s ease}.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(75,35,28,.12)}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
 </style></head><body>
 <header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
 <div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><button id="cur" aria-label="Switch currency">LKR</button></div>
