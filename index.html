@@ -231,7 +231,7 @@ nav button:focus-visible{outline:2px solid #f0cf85;outline-offset:-2px;border-ra
 
 
 /* Contrast + bright Ceylon palette refinement */
-:root, :root[data-theme="light"]{
+:root:not([data-theme="dark"]), :root[data-theme="light"]{
  color-scheme:light!important;
  --bg:#f7f4e9!important;--card:#fffef9!important;--ink:#193d32!important;
  --mute:#586d60!important;--line:#d9dfcf!important;
@@ -287,9 +287,82 @@ nav button[aria-current=true]{color:#fff0c4!important;background:rgba(230,173,50
  :root:not([data-theme="dark"]){color-scheme:light!important}
 }
 
+
+/* CINEMATIC CEYLON MODE + ACCESSIBLE THEME SWITCH */
+.top-actions{display:flex;align-items:center;gap:8px}
+.top-actions button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:7px 12px;font:600 12px 'Noto Sans',sans-serif;backdrop-filter:blur(12px);cursor:pointer;transition:background .25s ease,transform .25s ease,border-color .25s ease}
+.top-actions button:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}
+#theme{min-width:78px}
+:root{color-scheme:light;transition:background-color .35s ease}
+body,.hero,.card,.cat,.dish,.sheet,nav,.search,.tag,.chip,.sec h2{
+ transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease
+}
+.hero{isolation:isolate;box-shadow:0 22px 65px rgba(18,65,52,.22),inset 0 1px rgba(255,255,255,.24)}
+.hero:before{z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero .wrap:after{content:"";position:absolute;inset:-30px -20px;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at var(--spot-x,78%) var(--spot-y,20%),rgba(255,230,174,.2),transparent 42%);transition:background .15s ease}
+#scroll-progress{height:4px;box-shadow:0 0 18px rgba(230,173,50,.72)}
+.reveal{filter:blur(3px)}
+.reveal.is-visible{filter:blur(0)}
+.card:hover .pic{filter:saturate(1.12)}
+@media(prefers-reduced-motion:no-preference){
+ .hero{animation:cinema-arrive 1.1s cubic-bezier(.18,.72,.22,1) both}
+ .hero .moon{filter:drop-shadow(0 0 22px rgba(255,225,160,.35))}
+ .sec h2{transition:letter-spacing .4s ease}
+ .sec:has(+ .rail) h2{letter-spacing:.015em}
+}
+@keyframes cinema-arrive{from{opacity:.65;filter:saturate(.7);transform:translateY(10px)}to{opacity:1;filter:saturate(1);transform:translateY(0)}}
+/* True dark palette: forest, charcoal and warm gold */
+:root[data-theme="dark"]{
+ color-scheme:dark!important;
+ --bg:#101b18!important;--card:#1b2a25!important;--ink:#f2ead8!important;
+ --mute:#b9c6b9!important;--line:#354a40!important;
+ --maroon:#d17a70!important;--gold:#e8bd67!important;
+ --green:#77b69a!important;--teal:#75c6c0!important;--tea:#a3bd79!important;
+}
+:root[data-theme="dark"] html, :root[data-theme="dark"] body{
+ background-color:#101b18!important;color:#f2ead8!important;color-scheme:dark!important
+}
+:root[data-theme="dark"] body{
+ background-image:radial-gradient(ellipse at 8% 16%,rgba(209,122,112,.12),transparent 30%),radial-gradient(ellipse at 92% 34%,rgba(68,155,139,.13),transparent 32%),linear-gradient(135deg,#101b18,#14231e)!important
+}
+:root[data-theme="dark"] .hero{
+ background:linear-gradient(118deg,#0b211b 0%,#17483b 52%,#512d35 100%)!important;
+ box-shadow:0 22px 65px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.12)
+}
+:root[data-theme="dark"] .search{
+ background:#1b2a25!important;color:#f2ead8!important;border-color:#506b5c!important;
+ box-shadow:0 18px 44px rgba(0,0,0,.38),0 0 0 5px rgba(255,255,255,.035)!important
+}
+:root[data-theme="dark"] .search input,:root[data-theme="dark"] .search select,
+:root[data-theme="dark"] .f input,:root[data-theme="dark"] .f select{
+ background:#263a31!important;color:#f4efdf!important;-webkit-text-fill-color:#f4efdf!important;border-color:#526b5b!important
+}
+:root[data-theme="dark"] .search input::placeholder,:root[data-theme="dark"] .f input::placeholder{color:#c2cbbd!important}
+:root[data-theme="dark"] .search select option,:root[data-theme="dark"] .f select option{background:#1b2a25!important;color:#f2ead8!important}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] .cat,:root[data-theme="dark"] .dish{
+ background:#1b2a25!important;color:#f2ead8!important;border-color:#354a40!important;box-shadow:0 8px 24px rgba(0,0,0,.2)!important
+}
+:root[data-theme="dark"] .body h3,:root[data-theme="dark"] .body p,
+:root[data-theme="dark"] .sec h2,:root[data-theme="dark"] .cat{color:#f2ead8!important}
+:root[data-theme="dark"] .mute{color:#bac9bd!important}
+:root[data-theme="dark"] .tag{background:#263a31!important;color:#dce8d9!important;border-color:#435b4d!important}
+:root[data-theme="dark"] .chip{background:#1b2a25!important;color:#a9d8c2!important;border-color:#557b67!important}
+:root[data-theme="dark"] .chip[aria-pressed=true]{background:#39765c!important;color:#fff!important}
+:root[data-theme="dark"] nav{background:rgba(12,31,25,.92)!important;border-color:#52664f!important}
+:root[data-theme="dark"] nav button{color:#dce8dc!important}
+:root[data-theme="dark"] nav button[aria-current=true]{color:#ffe2a0!important;background:rgba(232,189,103,.16)!important}
+:root[data-theme="dark"] .sheet{background:#17251f!important;color:#f2ead8!important;border-color:#354a40!important}
+:root[data-theme="dark"] .btn.ghost{color:#a9d8c2!important;border-color:#648e76!important}
+:root[data-theme="dark"] .top-actions button{background:rgba(0,0,0,.2);border-color:rgba(255,255,255,.3)}
+:root[data-theme="dark"] .map{filter:brightness(.82) saturate(.9)}
+:root[data-theme="dark"] .demonote{color:#bdc9bd!important}
+@media(max-width:420px){.top-actions{gap:5px}.top-actions button{padding:7px 9px;font-size:11px}#theme{min-width:0}}
+@media(prefers-reduced-motion:reduce){.reveal{filter:none}.hero{animation:none}}
+
 </style></head><body>
 <header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
-<div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><button id="cur" aria-label="Switch currency">LKR</button></div>
+<div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><div class="top-actions"><button id="theme" type="button" aria-label="Switch to dark theme" title="Switch theme">🌙 <span>Dark</span></button><button id="cur" aria-label="Switch currency">LKR</button></div></div>
 <h1 id="greet">Ayubowan</h1><p>Stay, eat and explore the pearl of the Indian Ocean.</p>
 <div class="search"><select aria-label="Destination" id="dest"></select><input type="number" min="1" value="2" aria-label="Travellers"><input type="date" aria-label="Check in"><input type="date" aria-label="Check out"><button class="btn go" data-go="stay">Find stays</button></div></div></header>
 <main class="wrap" id="app" tabindex="-1"></main>
@@ -298,6 +371,9 @@ nav button[aria-current=true]{color:#fff0c4!important;background:rgba(230,173,50
 <script>
 const $=(s,e=document)=>e.querySelector(s);
 const progress=document.createElement('div');progress.id='scroll-progress';document.body.appendChild(progress);
+let theme='light';try{theme=localStorage.getItem('ayubowan-theme')||'light'}catch(e){}
+function applyTheme(next){theme=next;document.documentElement.dataset.theme=theme;const b=$('#theme');if(b){b.innerHTML=theme==='dark'?'☀️ <span>Light</span>':'🌙 <span>Dark</span>';b.setAttribute('aria-label',theme==='dark'?'Switch to light theme':'Switch to dark theme');b.title=theme==='dark'?'Switch to light theme':'Switch to dark theme'}try{localStorage.setItem('ayubowan-theme',theme)}catch(e){}}
+document.documentElement.dataset.theme=theme;
 const FX={LKR:1,USD:0.0033};let cur='LKR';try{cur=localStorage.getItem('cur')||'LKR'}catch(e){}
 const money=n=>cur==='USD'?'$'+Math.round(n*FX.USD):'LKR '+n.toLocaleString();
 const maps=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q+' Sri Lanka');
@@ -369,12 +445,13 @@ function revealItems(){const els=document.querySelectorAll('#app .reveal');if(!r
 window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%'},{passive:true});
 document.addEventListener('pointermove',e=>{if(!matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches)return;const card=e.target.closest('.card');if(!card)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateX(${-y*2.2}deg) rotateY(${x*2.8}deg) translateY(-2px)`});
 document.addEventListener('pointerout',e=>{const card=e.target.closest('.card');if(card&&!card.contains(e.relatedTarget))card.style.transform=''});
-document.addEventListener('click',e=>{const t=e.target.closest('[data-go],[data-f],[data-book],[data-close],#pay,#cur,#modal');if(!t)return;
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go],[data-f],[data-book],[data-close],#pay,#cur,#theme,#modal');if(!t)return;
 if(t.dataset.go)go(t.dataset.go);
 else if(t.dataset.f){const[k,v]=t.dataset.f.split('|');filter[k]=v;render()}
 else if(t.dataset.book)book(t.dataset.book);
 else if(t.id==='pay')done();
+else if(t.id==='theme'){applyTheme(theme==='dark'?'light':'dark')}
 else if(t.id==='cur'){cur=cur==='LKR'?'USD':'LKR';t.textContent=cur;try{localStorage.setItem('cur',cur)}catch(x){}render()}
 else if(t.hasAttribute('data-close')||(t.id==='modal'&&e.target===t))$('#modal').classList.remove('on')});
-$('#cur').textContent=cur;render();
+$('#cur').textContent=cur;applyTheme(theme);render();
 </script></body></html>
