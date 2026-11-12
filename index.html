@@ -360,11 +360,70 @@ body,.hero,.card,.cat,.dish,.sheet,nav,.search,.tag,.chip,.sec h2{
 @media(max-width:420px){.top-actions{gap:5px}.top-actions button{padding:7px 9px;font-size:11px}#theme{min-width:0}}
 @media(prefers-reduced-motion:reduce){.reveal{filter:none}.hero{animation:none}}
 
+
+/* Living island illustrations: traditional Laksha + Sri Lankan wildlife & transport */
+.island-scenes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;contain:paint}
+body>header,body>main,body>nav{position:relative;z-index:1}
+body>nav{z-index:5}
+.island-scenes .scene-art{position:absolute;color:#8d493d;opacity:.20;filter:drop-shadow(0 5px 9px rgba(73,48,31,.08))}
+.laksha-art{width:230px;height:230px;left:50%;top:43%;transform:translate(-50%,-50%);opacity:.075!important;color:#a66d36!important}
+.dancer-art{width:clamp(88px,13vw,150px);height:auto;left:max(2px,calc((100vw - 1100px)/2));top:42%;opacity:.22}
+.elephant-art{width:clamp(125px,18vw,205px);height:auto;right:1%;top:62%;opacity:.18}
+.leopard-art{width:clamp(115px,17vw,190px);height:auto;left:2%;top:78%;opacity:.17}
+.tuk-art{width:clamp(100px,15vw,170px);height:auto;right:2%;top:31%;opacity:.20}
+.train-art{width:clamp(145px,22vw,235px);height:auto;right:4%;bottom:13%;opacity:.16}
+.lantern-art{width:60px;height:90px;left:calc(50% - 30px);top:67%;opacity:.10}
+.headlamp,.train-lights,.lamp-glow{transition:filter .5s ease,opacity .5s ease}
+:root[data-theme="dark"] .island-scenes .scene-art{color:#d9b875;opacity:.20;filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
+:root[data-theme="dark"] .laksha-art{color:#d8ae62!important;opacity:.12!important}
+:root[data-theme="dark"] .dancer-art{color:#d9b875;opacity:.19}
+:root[data-theme="dark"] .elephant-art{color:#9fb9a2;opacity:.17}
+:root[data-theme="dark"] .leopard-art{color:#c69a68;opacity:.18}
+:root[data-theme="dark"] .tuk-art{color:#d9b875;opacity:.2}
+:root[data-theme="dark"] .train-art{color:#a9c8b7;opacity:.18}
+:root[data-theme="dark"] .lantern-art{opacity:.96;filter:drop-shadow(0 0 9px #ffb43c) drop-shadow(0 0 26px #ff9d2e)}
+:root[data-theme="dark"] .lamp-glow{filter:drop-shadow(0 0 9px #ffbd45) drop-shadow(0 0 22px #ff8d25)}
+:root[data-theme="dark"] .headlamp{filter:drop-shadow(0 0 7px #fff1a4) drop-shadow(0 0 18px #ffbf4b)}
+:root[data-theme="dark"] .train-lights{filter:drop-shadow(0 0 8px #ffda81) drop-shadow(0 0 16px #ffb33d)}
+@media(max-width:760px){
+ .dancer-art{left:-22px;top:52%;width:86px;opacity:.15}
+ .elephant-art{right:-22px;top:66%;width:125px}
+ .leopard-art{left:-25px;top:82%;width:115px}
+ .tuk-art{right:-22px;top:36%;width:105px}
+ .train-art{right:-32px;bottom:12%;width:155px}
+ .laksha-art{width:175px;height:175px;top:48%}
+ .lantern-art{left:auto;right:26%;top:72%;width:45px}
+}
+@media(prefers-reduced-motion:reduce){.headlamp,.train-lights,.lamp-glow{transition:none}}
+
 </style></head><body>
 <header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
 <div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><div class="top-actions"><button id="theme" type="button" aria-label="Switch to dark theme" title="Switch theme">🌙 <span>Dark</span></button><button id="cur" aria-label="Switch currency">LKR</button></div></div>
 <h1 id="greet">Ayubowan</h1><p>Stay, eat and explore the pearl of the Indian Ocean.</p>
 <div class="search"><select aria-label="Destination" id="dest"></select><input type="number" min="1" value="2" aria-label="Travellers"><input type="date" aria-label="Check in"><input type="date" aria-label="Check out"><button class="btn go" data-go="stay">Find stays</button></div></div></header>
+
+<div class="island-scenes" aria-hidden="true">
+ <svg class="scene-art laksha-art" viewBox="0 0 220 220"><defs><pattern id="laksha" width="110" height="110" patternUnits="userSpaceOnUse"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M55 5C68 25 88 35 105 55 88 75 68 85 55 105 42 85 22 75 5 55 22 35 42 25 55 5Z"/><path d="M55 20C65 37 73 45 90 55 73 65 65 73 55 90 45 73 37 65 20 55 37 45 45 37 55 20Z"/><circle cx="55" cy="55" r="9"/><path d="M55 0v110M0 55h110"/></g></pattern></defs><rect width="220" height="220" fill="url(#laksha)"/></svg>
+ <svg class="scene-art dancer-art" viewBox="0 0 180 300">
+  <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M90 30l-22 18 22-5 22 5zM90 13v24M72 29h36M76 47q14 12 28 0"/>
+   <circle cx="90" cy="68" r="15" fill="currentColor" stroke="none"/>
+   <path d="M78 84l-17 38 29 15 29-15-17-38M90 95v55M62 106L32 83 15 94 48 131 73 123M118 106l30-23 17 11-33 37-25-8"/>
+   <path d="M61 122q29 18 58 0l20 70q-49 28-98 0z" fill="currentColor" opacity=".22"/>
+   <path d="M45 193q45 25 90 0M53 208q37 17 74 0M63 224q27 12 54 0"/>
+   <path d="M74 149l-14 48-15 38M106 149l14 48 15 38"/>
+   <path d="M40 238l-5 12M140 238l5 12"/>
+   <path d="M53 136q37 23 74 0M60 154q30 18 60 0"/>
+   <circle cx="68" cy="104" r="4" fill="currentColor"/><circle cx="112" cy="104" r="4" fill="currentColor"/>
+  </g>
+  <g fill="#d5a94f"><circle cx="90" cy="68" r="3"/><path d="M90 8l-5 10h10z"/></g>
+ </svg>
+ <svg class="scene-art elephant-art" viewBox="0 0 250 150"><g fill="currentColor"><path d="M34 70q8-42 70-45 60-3 83 37l18 6q20 12 12 35l-12 12-8-7 5-18-18-9-8 44h-18l-4-37H79l-5 38H56l-3-48q-22 8-19 33l-12 7q-16-23 0-43z"/><path d="M173 65q35-12 39 17-5 19-20 22l-4-10q12-6 8-17-6-10-19 0z"/><path d="M53 49q-26-4-28 20 14 20 33 4z" opacity=".8"/></g><circle cx="179" cy="62" r="3" fill="#e7bd67"/></svg>
+ <svg class="scene-art leopard-art" viewBox="0 0 230 130"><g fill="currentColor"><path d="M25 76q8-32 56-34l37 9 34-12 26 12 16-13 14 7-15 24q-12 13-35 8l-20 17-12-5 7-18-43 2-13 27H62l2-29-22 20-11-5 11-20z"/><path d="M24 75Q4 62 9 42q13 17 28 16" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></g><g fill="#d5a94f"><circle cx="69" cy="59" r="3"/><circle cx="91" cy="57" r="3"/><circle cx="112" cy="63" r="3"/><circle cx="145" cy="58" r="3"/><circle cx="165" cy="68" r="3"/><circle cx="80" cy="81" r="3"/><circle cx="132" cy="82" r="3"/></g><circle cx="190" cy="58" r="2.5" fill="#f4ead6"/></svg>
+ <svg class="scene-art tuk-art" viewBox="0 0 210 130"><g stroke="currentColor" stroke-width="5" stroke-linejoin="round"><path d="M35 76l9-38q4-14 19-14h58q15 0 22 15l15 37z" fill="currentColor" fill-opacity=".16"/><path d="M63 26l-8 43h81l-11-43z" fill="none"/><path d="M22 76h150v22H22z" fill="currentColor" fill-opacity=".2"/><circle cx="57" cy="101" r="15" fill="#101b18"/><circle cx="145" cy="101" r="15" fill="#101b18"/><path d="M36 83h-15M173 83h15" fill="none"/></g><path class="headlamp" d="M176 79l27-9v22l-27-3z" fill="#fff0a8"/><path d="M47 79h10" stroke="#e6ad32" stroke-width="6"/></svg>
+ <svg class="scene-art train-art" viewBox="0 0 260 130"><g stroke="currentColor" stroke-width="4"><rect x="10" y="20" width="235" height="82" rx="17" fill="currentColor" fill-opacity=".16"/><path d="M26 35h36v34H26zM76 35h36v34H76zM126 35h36v34h-36zM176 35h36v34h-36z" fill="#8ec5bd" fill-opacity=".5"/><path d="M22 85h210M38 105l-15 14m50-14-15 14m50-14-15 14m50-14-15 14m50-14-15 14" fill="none"/></g><g class="train-lights" fill="#ffe6a0"><circle cx="225" cy="79" r="5"/><circle cx="211" cy="79" r="4"/></g></svg>
+ <svg class="scene-art lantern-art" viewBox="0 0 80 120"><path d="M40 7v18m-14 0h28l-5 13H31z" fill="none" stroke="currentColor" stroke-width="3"/><path class="lamp-glow" d="M27 39h26l8 27-21 25-21-25z" fill="#f5b83d" stroke="#9b5428" stroke-width="3"/><path d="M40 48v30m-8-15h16" stroke="#fff2b8" stroke-width="3" stroke-linecap="round"/><path d="M40 91v17" stroke="currentColor" stroke-width="3"/></svg>
+</div>
 <main class="wrap" id="app" tabindex="-1"></main>
 <nav aria-label="Main"></nav>
 <div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
