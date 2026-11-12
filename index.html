@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ayubowan Trails</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Noto+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Serif+Sinhala:wght@600;700&display=swap">
 <style>
 :root{--maroon:#8D153A;--gold:#EAB200;--green:#00534E;--teal:#0E7C86;--tea:#5B8C3A;--cin:#A0522D;--bg:#FFF6E5;--card:#fff;--ink:#2B2B2B;--mute:#6b5f55;--line:#ead9b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1416;--card:#2a1d20;--ink:#f6e9d2;--mute:#c4b199;--line:#4a3438}}
@@ -165,6 +165,70 @@ nav button[aria-current=true] b{filter:drop-shadow(0 3px 4px #d5a94f88)}
  .reveal{opacity:1;transform:none}
 }
 
+
+/* Real Ceylon photography + immersive island atmosphere */
+body{
+ background-image:
+  radial-gradient(ellipse at 12% 12%,rgba(221,174,82,.19),transparent 30%),
+  radial-gradient(ellipse at 88% 28%,rgba(31,112,98,.16),transparent 34%),
+  radial-gradient(ellipse at 55% 92%,rgba(130,61,54,.10),transparent 34%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23174f43' stroke-width='1.4' opacity='.13'%3E%3Cpath d='M0 275 Q55 225 110 275 T220 275 T360 275 M0 300 Q55 250 110 300 T220 300 T360 300'/%3E%3Cpath d='M45 185q-25-45 8-80 34 34 8 80m-8 0q-45-25-42-65 42 8 50 42m-8 23q45-25 42-65-42 8-50 42'/%3E%3Cpath d='M280 95q-22-38 7-69 29 29 7 69m-7 0q-38-22-35-56 35 7 42 36m-7 20q38-22 35-56-35 7-42 36'/%3E%3Ccircle cx='180' cy='180' r='34' stroke-dasharray='3 8'/%3E%3Cpath d='M180 137q-24 22 0 43 24-21 0-43zm0 86q-24-22 0-43 24 21 0 43zm-43-43q22-24 43 0-21 24-43 0zm86 0q-22-24-43 0 21 24 43 0z'/%3E%3C/g%3E%3C/svg%3E");
+ background-size:auto,auto,auto,360px 360px;
+ background-attachment:fixed;
+}
+body:before{
+ content:"";position:fixed;inset:-15%;z-index:-1;pointer-events:none;
+ background:
+  radial-gradient(ellipse at 18% 35%,rgba(213,169,79,.12),transparent 28%),
+  radial-gradient(ellipse at 78% 72%,rgba(40,125,121,.11),transparent 30%);
+ animation:island-drift 22s ease-in-out infinite alternate;
+}
+@keyframes island-drift{from{transform:translate3d(-2%,0,0) scale(1)}to{transform:translate3d(2%,-1.5%,0) scale(1.06)}}
+body{font-size:16px;line-height:1.65}
+.mute{color:#596d61;font-size:13.5px}
+.body p{color:#435b4e}
+.body h3{color:#173e33}
+.pic{isolation:isolate}
+.pic .destination-photo{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;
+ filter:saturate(1.08) contrast(1.04);transition:transform .75s cubic-bezier(.2,.7,.2,1),filter .5s ease;
+}
+.card:hover .pic .destination-photo{transform:scale(1.075);filter:saturate(1.2) contrast(1.06)}
+.pic:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(8,27,22,.04) 15%,rgba(8,27,22,.68) 100%);pointer-events:none}
+.pic .photo-credit{
+ position:absolute;right:10px;top:10px;z-index:2;color:#fff;background:rgba(7,29,24,.58);
+ border:1px solid #ffffff55;border-radius:30px;padding:3px 8px;font-size:10px;text-decoration:none;
+ backdrop-filter:blur(8px);letter-spacing:.03em
+}
+.pic .photo-credit:hover{background:rgba(7,29,24,.86)}
+/* Floating glass navigation — legible on every screen */
+nav{
+ background:rgba(13,43,36,.84)!important;
+ -webkit-backdrop-filter:blur(26px) saturate(180%);
+ backdrop-filter:blur(26px) saturate(180%);
+ border:1px solid rgba(255,255,255,.2)!important;
+ box-shadow:0 14px 42px rgba(7,30,25,.28),inset 0 1px 0 rgba(255,255,255,.12)!important;
+ border-radius:24px 24px 0 0;
+ padding:7px 5px calc(7px + env(safe-area-inset-bottom,0px))!important;
+}
+nav button{color:#e8eee7!important;font-size:12px;font-weight:600;letter-spacing:.015em;padding:8px 2px!important}
+nav button b{font-size:21px;line-height:1.1}
+nav button[aria-current=true]{
+ color:#fff4d7!important;background:rgba(213,169,79,.22);border-radius:16px;
+ box-shadow:inset 0 0 0 1px rgba(231,199,128,.24);transform:translateY(-2px)
+}
+nav button[aria-current=true] b{filter:drop-shadow(0 2px 6px rgba(236,193,101,.6))}
+nav button:focus-visible{outline:2px solid #f0cf85;outline-offset:-2px;border-radius:14px}
+@media(min-width:760px){
+ nav{border-radius:999px!important;padding:6px 12px!important;bottom:22px!important}
+ nav button{border-radius:30px;padding:9px 10px!important}
+}
+@media(max-width:759px){
+ nav{left:10px!important;right:10px!important;bottom:max(9px,env(safe-area-inset-bottom,0px))!important}
+}
+@media(max-width:390px){nav button{font-size:10.5px!important}nav button b{font-size:19px}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none}.pic .destination-photo{transition:none}}
+
 </style></head><body>
 <header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
 <div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><button id="cur" aria-label="Switch currency">LKR</button></div>
@@ -202,12 +266,22 @@ const FOOD=[
 {n:'Lantern Rooftop Galle',c:'Galle',t:'Rooftop',e:'🌇',b:'$$$',diet:['Halal','Vegetarian'],d:'Sunset cocktails and grilled fish in the fort.'}];
 const DISHES=[['Rice & curry','🍛',2],['Kottu roti','🥘',3],['Hoppers','🥞',1],['Lamprais','🍃',2],['Pol sambol','🥥',3],['Ambul thiyal','🐟',3],['Watalappan','🍮',0],['King coconut','🥥',0]];
 const greets=['Ayubowan','Vanakkam','Welcome'];let gi=0;setInterval(()=>{gi=(gi+1)%3;$('#greet').textContent=greets[gi]},2600);
+
+const DESTINATION_PHOTOS={
+ 'Sigiriya Lion Rock':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Sigiriya%20Sri%20lanka.jpg?width=1200',credit:'Shenal Sadurshan / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Sigiriya_-_Sri_Lanka.jpg'},
+ 'Nine Arches Bridge':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Ella%20Nine%20Arch%20Bridge%20Sri%20Lanka.jpg?width=1200',credit:'Kaushiru90 / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Ella_Nine_Arch_Bridge_Sri_Lanka.jpg'},
+ 'Jaffna Fort':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Jaffna%20Fort.jpg?width=1200',credit:'Lakpura Travels / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Jaffna_Fort.jpg'},
+ 'Galle Fort':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/GALLE%20FORT.jpg?width=1200',credit:'Vimukthi SL / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:GALLE_FORT.jpg'},
+ 'Yala National Park':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Yala%20Naional%20Park.jpg?width=1200',credit:'Diduladinoj1 / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Yala_Naional_Park.jpg'},
+ 'Nilaveli Beach':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Nillaveli%20Beach.JPG?width=1200',credit:'Anton 17 / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Nillaveli_Beach.JPG'}
+};
+
 const grad=g=>`background:linear-gradient(135deg,${g.split(',')[0]},${g.split(',')[1]})`;
 let tab='home',filter={stay:'All',eat:'All',pl:'All'},faves=new Set();
 const NAV=[['home','🏠','Home'],['stay','🛏️','Stay'],['places','🏯','Places'],['eat','🍛','Eat'],['transport','🚕','Transport'],['map','🗺️','Map']];
 function drawNav(){$('nav').innerHTML=NAV.map(([k,i,l])=>`<button data-go="${k}" ${tab===k?'aria-current="true"':''}><b>${i}</b>${l}</button>`).join('')}
 function chips(list,key){return `<div class="chips">${['All',...list].map(x=>`<button class="chip" data-f="${key}|${x}" aria-pressed="${filter[key]===x}">${x}</button>`).join('')}</div>`}
-const placeCard=p=>`<article class="card"><div class="pic" style="${grad(p.g)}">${p.e}<span>${p.c}</span></div><div class="body"><h3>${p.n}</h3><div class="mute">${p.t} · Best ${p.best}</div><p>${p.d}</p><div class="tags"><span class="tag">Entry ${p.fee}</span><span class="tag">${p.h}</span></div><p class="mute">Tip: ${p.tip}</p><div class="row"><a class="btn ghost" target="_blank" rel="noopener" href="${maps(p.n)}">Open in Google Maps</a><a class="btn alt" target="_blank" rel="noopener" href="${dirs(p.n)}">Directions</a></div></div></article>`;
+const placeCard=p=>{const photo=DESTINATION_PHOTOS[p.n];return `<article class="card"><div class="pic" style="${grad(p.g)}">${photo?`<img class="destination-photo" src="${photo.url}" alt="${p.n} in Sri Lanka" loading="lazy" decoding="async"><a class="photo-credit" href="${photo.page}" target="_blank" rel="noopener" aria-label="Photo credit: ${photo.credit}">Photo: ${photo.credit.split(' / ')[0]}</a>`:''}${p.e}<span>${p.c}</span></div><div class="body"><h3>${p.n}</h3><div class="mute">${p.t} · Best ${p.best}</div><p>${p.d}</p><div class="tags"><span class="tag">Entry ${p.fee}</span><span class="tag">${p.h}</span></div><p class="mute">Tip: ${p.tip}</p><div class="row"><a class="btn ghost" target="_blank" rel="noopener" href="${maps(p.n)}">Open in Google Maps</a><a class="btn alt" target="_blank" rel="noopener" href="${dirs(p.n)}">Directions</a></div></div></article>`};
 const bookingSearch=c=>'https://www.booking.com/searchresults.html?ss='+encodeURIComponent(c+', Sri Lanka');
 const hotelCard=h=>'<article class="card"><div class="pic" style="'+grad('#00534E,#0E7C86')+'">'+h.e+'<span>Stay in '+h.c+'</span></div><div class="body"><h3>'+h.n+'</h3><div class="mute">'+h.t+' · '+h.c+'</div><div class="tags">'+h.a.map(x=>'<span class="tag">'+x+'</span>').join('')+(h.eco?'<span class="tag">🌱 Eco-friendly</span>':'')+'</div><div class="row"><a class="btn ghost" target="_blank" rel="noopener" href="'+maps(h.n+' '+h.c)+'">Google Maps</a><a class="btn" target="_blank" rel="noopener" href="'+bookingSearch(h.c)+'">Booking.com</a></div><div class="mute" style="margin-top:7px">Check current prices, dates and availability on Booking.com.</div></div></article>'
 const foodCard=f=>`<article class="card"><div class="body"><h3>${f.e} ${f.n}</h3><div class="mute">${f.t} · ${f.c} · ${f.b}</div><p>${f.d}</p><div class="tags">${f.diet.map(x=>`<span class="tag">${x}</span>`).join('')}</div><a class="btn ghost" target="_blank" rel="noopener" href="${maps(f.n+' '+f.c)}">Open in Google Maps</a></div></article>`;
