@@ -229,6 +229,64 @@ nav button:focus-visible{outline:2px solid #f0cf85;outline-offset:-2px;border-ra
 @media(max-width:390px){nav button{font-size:10.5px!important}nav button b{font-size:19px}}
 @media(prefers-reduced-motion:reduce){body:before{animation:none}.pic .destination-photo{transition:none}}
 
+
+/* Contrast + bright Ceylon palette refinement */
+:root, :root[data-theme="light"]{
+ color-scheme:light!important;
+ --bg:#f7f4e9!important;--card:#fffef9!important;--ink:#193d32!important;
+ --mute:#586d60!important;--line:#d9dfcf!important;
+ --maroon:#963b43!important;--gold:#e6ad32!important;
+ --green:#176b57!important;--teal:#168b91!important;--tea:#78a85b!important;
+}
+html{background:#f7f4e9!important;color-scheme:light}
+body{
+ background-color:#f7f4e9!important;
+ background-image:
+  radial-gradient(ellipse at 8% 16%,rgba(244,190,74,.23),transparent 30%),
+  radial-gradient(ellipse at 92% 34%,rgba(58,164,157,.17),transparent 32%),
+  radial-gradient(ellipse at 48% 88%,rgba(214,112,91,.10),transparent 34%),
+  linear-gradient(135deg,rgba(255,255,255,.65),rgba(247,244,233,.35))!important;
+ color:#193d32!important;
+}
+.hero{background:linear-gradient(118deg,#155b4b 0%,#197d70 52%,#963b43 100%)!important}
+.hero p{color:#fff8e9!important;opacity:1!important}
+.search{
+ background:#fffefb!important;color:#193d32!important;
+ border:1px solid #e2d5b7!important;
+ box-shadow:0 18px 44px rgba(15,54,43,.24),0 0 0 5px rgba(255,255,255,.12)!important;
+}
+.search input,.search select,.f input,.f select{
+ background:#f4f7ef!important;color:#173c31!important;
+ -webkit-text-fill-color:#173c31!important;
+ border:1.5px solid #c8d8c8!important;
+ box-shadow:inset 0 1px 2px rgba(22,60,49,.04)!important;
+ font-weight:600!important;
+}
+.search input::placeholder,.f input::placeholder{color:#617568!important;opacity:1!important}
+.search select option,.f select option{background:#fffef9!important;color:#173c31!important}
+.search input:focus,.search select:focus,.f input:focus,.f select:focus{
+ outline:3px solid rgba(22,139,145,.22)!important;border-color:#168b91!important;
+}
+.search .btn.go{
+ background:linear-gradient(100deg,#963b43,#bd594b 52%,#176b57)!important;
+ color:#fff!important;font-weight:700!important;letter-spacing:.02em;
+ box-shadow:0 7px 18px rgba(150,59,67,.2)!important;
+}
+.search .btn.go:hover{filter:brightness(1.07)}
+.card,.cat,.dish{background:#fffef9!important;color:#193d32!important}
+.body h3,.body p,.sec h2,.cat{color:#193d32!important}
+.mute{color:#586d60!important}
+.tag{background:#f0f5e9!important;color:#355b48!important;border-color:#d8e2d1!important}
+.sec:after{background:radial-gradient(circle at 4px 5px,#e6ad32 2.5px,transparent 3px) 0 0/14px 10px repeat-x}
+.chip{background:#fffef9!important;color:#176b57!important;border-color:#9abfae!important}
+.chip[aria-pressed=true]{background:#176b57!important;color:#fff!important}
+nav{background:rgba(20,75,62,.91)!important}
+nav button{color:#f4f5e9!important}
+nav button[aria-current=true]{color:#fff0c4!important;background:rgba(230,173,50,.25)!important}
+@media(prefers-color-scheme:dark){
+ :root:not([data-theme="dark"]){color-scheme:light!important}
+}
+
 </style></head><body>
 <header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
 <div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><button id="cur" aria-label="Switch currency">LKR</button></div>
