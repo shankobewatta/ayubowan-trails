@@ -70,6 +70,101 @@ body{
 .card,.dish,.cat{box-shadow:0 5px 18px rgba(75,35,28,.055)}
 @media(prefers-reduced-motion:no-preference){.card{transition:transform .22s ease,box-shadow .22s ease}.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(75,35,28,.12)}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}}
+
+/* AYUBOWAN TRAILS — Ceylon editorial redesign */
+:root{
+ --bg:#f5f1e7;--card:#fffdf7;--ink:#183b32;--mute:#68776d;--line:#e5dcc8;
+ --maroon:#762c32;--gold:#d5a94f;--green:#174f43;--teal:#287d79;--tea:#64865a;
+ color-scheme:light;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans','Noto Sans Sinhala','Noto Sans Tamil',sans-serif;background-color:var(--bg);background-image:radial-gradient(ellipse at 12% 22%,rgba(213,169,79,.10),transparent 32%),radial-gradient(ellipse at 90% 62%,rgba(40,125,121,.08),transparent 34%);color:var(--ink);padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:920px;padding-left:clamp(18px,4vw,36px);padding-right:clamp(18px,4vw,36px)}
+.hero{min-height:390px;padding:26px 0 34px;border-radius:0 0 38px 38px;background:linear-gradient(120deg,rgba(12,48,41,.96),rgba(23,79,67,.92) 52%,rgba(118,44,50,.88)),radial-gradient(circle at 85% 10%,rgba(213,169,79,.32),transparent 34%);box-shadow:0 18px 55px rgba(24,59,50,.18)}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.17;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23e5c47b' stroke-width='1.2'%3E%3Cpath d='M90 12c18 20 18 38 0 54-18-16-18-34 0-54zm0 102c18-20 18-38 0-54-18 16-18 34 0 54zM12 90c20-18 38-18 54 0-16 18-34 18-54 0zm102 0c-20-18-38-18-54 0 16 18 34 18 54 0z'/%3E%3Ccircle cx='90' cy='90' r='32'/%3E%3Ccircle cx='90' cy='90' r='70' stroke-dasharray='3 7'/%3E%3C/g%3E%3C/svg%3E");background-size:180px}
+.hero:after{content:"SRI LANKA  ·  CEYLON  ·  ශ්‍රී ලංකාව";position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-size:10px;letter-spacing:.32em;font-weight:700;color:#f2dfb7;opacity:.55;white-space:nowrap;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero svg.moon{right:-45px;top:34px;width:clamp(190px,35vw,330px);opacity:.19;animation:slow-orbit 36s linear infinite}
+.top{margin-bottom:34px}
+.top>span{font-weight:700;letter-spacing:.04em;font-size:14px}
+.top button{border:1px solid #ffffff45;background:#ffffff16;backdrop-filter:blur(12px);padding:8px 15px}
+.hero h1{font-size:clamp(46px,8vw,76px);letter-spacing:-.045em;line-height:.98;text-shadow:0 5px 28px #071e1a55}
+.hero p{font-size:clamp(14px,2vw,17px);max-width:460px;color:#f4ead6;margin:14px 0 26px;letter-spacing:.01em}
+.search{max-width:690px;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:9px;padding:10px;border:1px solid #ffffff80;background:rgba(255,253,247,.96);box-shadow:0 16px 40px #08251f45;border-radius:20px}
+.search .go{grid-column:auto}
+.search input,.search select{min-width:0;background:#f7f3e9;border-color:#e7ddc8;border-radius:12px;padding:12px 10px}
+.btn{background:var(--maroon);border-radius:999px;padding:11px 18px;box-shadow:0 5px 14px rgba(118,44,50,.14);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn.alt{background:var(--green)}
+.btn.ghost{color:var(--green);border-color:#9ab5a5;box-shadow:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(24,59,50,.18)}
+.cats{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:26px 0}
+.cat{padding:15px 8px;border-radius:18px;background:linear-gradient(145deg,#fffdf8,#f4eddd);border:1px solid #e8dec9;color:var(--ink);font-weight:600;box-shadow:0 8px 22px rgba(54,65,48,.06);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.cat b{font-size:28px;margin-bottom:5px;filter:drop-shadow(0 3px 3px #183b321c)}
+.cat:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 14px 26px rgba(54,65,48,.12)}
+.sec{margin:34px 0 16px;gap:14px}
+.sec h2{font-size:clamp(23px,3vw,30px);color:var(--green);letter-spacing:-.025em}
+.sec:after{height:10px;background:radial-gradient(circle at 4px 5px,var(--gold) 2px,transparent 3px) 0 0/14px 10px repeat-x}
+.card{border:1px solid #e8dfce;border-radius:22px;background:var(--card);box-shadow:0 7px 22px rgba(42,54,43,.065);transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease;transform-style:preserve-3d}
+.card:hover{border-color:#d9c58e;box-shadow:0 18px 38px rgba(42,54,43,.13)}
+.pic{height:170px;padding:16px 18px;font-size:58px;background-image:radial-gradient(circle at 78% 20%,rgba(255,255,255,.25),transparent 25%),linear-gradient(145deg,transparent,rgba(0,0,0,.15));overflow:hidden}
+.pic:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(9,35,29,.4),transparent 65%);opacity:.75}
+.pic span{position:relative;z-index:1;border:1px solid #ffffff55;background:rgba(8,35,29,.46);backdrop-filter:blur(8px);padding:5px 11px;border-radius:999px;letter-spacing:.04em}
+.body{padding:17px 18px 19px}
+.body h3{font-size:21px;color:#203f34;letter-spacing:-.02em}
+.body p{line-height:1.65}
+.mute{color:#718075}
+.tag{background:#f4f0e5;border:1px solid #e8dfca;color:#52675a;padding:4px 10px}
+.row{gap:10px;flex-wrap:wrap}
+.chips{padding:3px 0 9px;scrollbar-width:thin}
+.chip{border-color:#a5b8a7;color:var(--green);padding:7px 16px;font-size:13px;transition:all .2s ease}
+.chip[aria-pressed=true]{background:var(--green);border-color:var(--green);box-shadow:0 5px 14px #174f4330}
+.rail{gap:16px;padding:4px 3px 14px;scrollbar-width:thin}
+.rail .card{min-width:min(300px,82vw);max-width:330px}
+.dish{border-radius:18px;background:linear-gradient(145deg,#fffdf8,#f1eadb);border-color:#e8dfce;min-width:185px;box-shadow:0 6px 18px rgba(42,54,43,.06);transition:transform .22s ease}
+.dish:hover{transform:translateY(-4px)}
+nav{background:rgba(255,253,247,.94);backdrop-filter:blur(18px);border-top:1px solid #e4d8bd;box-shadow:0 -8px 28px rgba(24,59,50,.08);padding-top:5px}
+nav button{font-size:11px;letter-spacing:.01em;transition:color .2s ease,transform .2s ease}
+nav button b{font-size:21px;margin-bottom:2px}
+nav button[aria-current=true]{color:var(--maroon);transform:translateY(-3px)}
+nav button[aria-current=true] b{filter:drop-shadow(0 3px 4px #d5a94f88)}
+.map{border-radius:22px;box-shadow:0 12px 30px rgba(24,59,50,.09)}
+.modal{backdrop-filter:blur(7px)}
+.sheet{border:1px solid #e6dcc8;box-shadow:0 -18px 50px #091c1855}
+.demonote{letter-spacing:.03em;padding:16px 0 6px}
+#scroll-progress{position:fixed;z-index:20;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#d5a94f,#8e3c42,#287d79);box-shadow:0 0 12px #d5a94f80;pointer-events:none}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+@keyframes slow-orbit{to{transform:rotate(360deg)}}
+@keyframes soft-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero h1{animation:hero-rise .8s both}
+.hero p{animation:hero-rise .9s .1s both}
+.search{animation:hero-rise .9s .2s both}
+@keyframes hero-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:760px){
+ body{padding-bottom:30px}
+ .cats{max-width:640px}
+ body[data-page="places"] #app,body[data-page="stay"] #app,body[data-page="eat"] #app{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;align-items:start}
+ body[data-page="places"] #app>.sec,body[data-page="stay"] #app>.sec,body[data-page="eat"] #app>.sec,body[data-page="places"] #app>.chips,body[data-page="stay"] #app>.chips,body[data-page="eat"] #app>.chips,body[data-page="places"] #app>.demonote,body[data-page="stay"] #app>.demonote,body[data-page="eat"] #app>.demonote{grid-column:1/-1}
+ body[data-page="places"] #app>.card,body[data-page="stay"] #app>.card,body[data-page="eat"] #app>.card{height:calc(100% - 12px)}
+ nav{left:50%;right:auto;bottom:18px;transform:translateX(-50%);width:min(620px,calc(100% - 40px));border:1px solid #e4d8bd;border-radius:999px;padding:5px 12px;box-shadow:0 12px 36px rgba(24,59,50,.16)}
+ nav button{border-radius:30px}
+}
+@media(max-width:620px){
+ .hero{min-height:0;padding:20px 0 30px;border-radius:0 0 28px 28px}
+ .top{margin-bottom:28px}
+ .search{grid-template-columns:1fr 1fr;border-radius:17px}
+ .search .go{grid-column:1/-1}
+ .pic{height:145px}
+ .sec{margin-top:28px}
+ .body{padding:14px}
+ .body h3{font-size:19px}
+ .row .btn{font-size:12px;padding:10px 13px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal{opacity:1;transform:none}
+}
+
 </style></head><body>
 <header class="hero"><svg class="moon" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="78" stroke-dasharray="3 6"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="30" stroke-dasharray="1 5"/><g id="p"><path d="M100 70c-10 12-10 22 0 30 10-8 10-18 0-30z"/></g><use href="#p" transform="rotate(45 100 100)"/><use href="#p" transform="rotate(90 100 100)"/><use href="#p" transform="rotate(135 100 100)"/><use href="#p" transform="rotate(180 100 100)"/><use href="#p" transform="rotate(225 100 100)"/><use href="#p" transform="rotate(270 100 100)"/><use href="#p" transform="rotate(315 100 100)"/></g></svg>
 <div class="wrap"><div class="top"><span>🐘 Ayubowan Trails</span><button id="cur" aria-label="Switch currency">LKR</button></div>
@@ -80,6 +175,7 @@ body{
 <div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
 <script>
 const $=(s,e=document)=>e.querySelector(s);
+const progress=document.createElement('div');progress.id='scroll-progress';document.body.appendChild(progress);
 const FX={LKR:1,USD:0.0033};let cur='LKR';try{cur=localStorage.getItem('cur')||'LKR'}catch(e){}
 const money=n=>cur==='USD'?'$'+Math.round(n*FX.USD):'LKR '+n.toLocaleString();
 const maps=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q+' Sri Lanka');
@@ -130,12 +226,17 @@ if(tab==='places'){const ts=[...new Set(PLACES.map(x=>x.t))];h=`<div class="sec"
 if(tab==='transport'){h='<div class="sec"><h2>Getting around Sri Lanka</h2></div><div class="card"><div class="body"><h3>🚕 PickMe</h3><p>Find tuk-tuks, cars, vans and other ride options where available. Check the pickup point and fare estimate in the PickMe app before confirming.</p><a class="btn" target="_blank" rel="noopener" href="https://pickme.lk/services/ride/">PickMe ride information</a> <a class="btn ghost" target="_blank" rel="noopener" href="https://pickme.lk/">Official website</a></div></div><div class="card"><div class="body"><h3>Plan a route</h3><p class="mute">Travel times depend on traffic and road conditions.</p><a class="btn alt" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Colombo%2C%20Sri%20Lanka&destination=Ella%2C%20Sri%20Lanka">Colombo to Ella directions</a></div></div><div class="card"><div class="body"><h3>Long-distance transfers</h3><p>For multi-stop journeys or groups, compare registered taxi operators.</p><a class="btn ghost" target="_blank" rel="noopener" href="https://srilanka.travel/taxi_opperator">Sri Lanka Tourism taxi directory</a></div></div>'}
 if(tab==='eat'){h=`<div class="sec"><h2>Where to eat</h2></div>${chips(['Halal','Vegetarian','Vegan'],'eat')}${FOOD.filter(x=>filter.eat==='All'||x.diet.includes(filter.eat)).map(foodCard).join('')||'<p class="mute">No spots match yet. Try another filter.</p>'}`}
 if(tab==='map'){h=`<div class="sec"><h2>Island map</h2></div>${mapSvg()}<p class="mute">Tap a pin to open it in Google Maps.</p>${[...PLACES.map(p=>p.n+'|'+p.c),...HOTELS.map(x=>x.n+'|'+x.c),...FOOD.map(x=>x.n+'|'+x.c)].map(s=>{const[n,c]=s.split('|');return `<div class="card"><div class="body row" style="margin:0"><div><b>${n}</b><div class="mute">${c}</div></div><a class="btn alt" target="_blank" rel="noopener" href="${dirs(n+' '+c)}">Directions</a></div></div>`}).join('')}`}
-$('#app').innerHTML=h+'<p class="demonote">🐘 Demo build. Sample data and mock payments only. Prices are illustrative.</p>';
+$('#app').innerHTML=h+'<p class="demonote">🐘 Demo build. Sample data and mock payments only. Prices are illustrative.</p>';document.body.dataset.page=tab;document.querySelectorAll('#app .card,#app .dish,#app .cat').forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=Math.min(i%6,5)*55+'ms'});revealItems();
 if(tab==='home'){const d=$('#dest');}}
 $('#dest').innerHTML='<option>Anywhere in Sri Lanka</option>'+Object.keys(CITY).map(c=>`<option>${c}</option>`).join('');
 function go(k){tab=k;render();window.scrollTo({top:0})}
 function book(n){const h=HOTELS.find(x=>x.n===n);$('#sheet').innerHTML=`<h2>Book ${h.n}</h2><span class="demo">Demo payment. No money is taken.</span><div class="f"><input type="date" aria-label="Check in"><input type="date" aria-label="Check out"><select aria-label="Guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option></select><input placeholder="Full name" aria-label="Full name"><input type="email" placeholder="Email" aria-label="Email"><input placeholder="Card number (any number)" aria-label="Card number" inputmode="numeric"></div><div class="row"><b>${money(h.p)} / night</b><button class="btn" id="pay">Confirm booking</button></div><p style="text-align:center"><button class="btn ghost" data-close>Cancel</button></p>`;$('#modal').classList.add('on')}
 function done(){const ref='AT-'+Math.random().toString(36).slice(2,8).toUpperCase();$('#sheet').innerHTML=`<div class="lotus">🪷</div><h2 style="text-align:center">Booking confirmed</h2><p style="text-align:center">Your reference is <b>${ref}</b>. Istuti, thank you!</p><p style="text-align:center"><button class="btn" data-close>Done</button></p>`}
+const revealObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -24px 0px'}):null;
+function revealItems(){const els=document.querySelectorAll('#app .reveal');if(!revealObserver){els.forEach(el=>el.classList.add('is-visible'));return}els.forEach(el=>revealObserver.observe(el))}
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%'},{passive:true});
+document.addEventListener('pointermove',e=>{if(!matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches)return;const card=e.target.closest('.card');if(!card)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateX(${-y*2.2}deg) rotateY(${x*2.8}deg) translateY(-2px)`});
+document.addEventListener('pointerout',e=>{const card=e.target.closest('.card');if(card&&!card.contains(e.relatedTarget))card.style.transform=''});
 document.addEventListener('click',e=>{const t=e.target.closest('[data-go],[data-f],[data-book],[data-close],#pay,#cur,#modal');if(!t)return;
 if(t.dataset.go)go(t.dataset.go);
 else if(t.dataset.f){const[k,v]=t.dataset.f.split('|');filter[k]=v;render()}
