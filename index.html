@@ -268,7 +268,7 @@ const DISHES=[['Rice & curry','🍛',2],['Kottu roti','🥘',3],['Hoppers','🥞
 const greets=['Ayubowan','Vanakkam','Welcome'];let gi=0;setInterval(()=>{gi=(gi+1)%3;$('#greet').textContent=greets[gi]},2600);
 
 const DESTINATION_PHOTOS={
- 'Sigiriya Lion Rock':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Sigiriya%20Sri%20lanka.jpg?width=1200',credit:'Shenal Sadurshan / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Sigiriya_-_Sri_Lanka.jpg'},
+ 'Sigiriya Lion Rock':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Sigiriya%20-%20Sri%20Lanka.jpg?width=1200',credit:'Shenal Sadurshan / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Sigiriya_-_Sri_Lanka.jpg'},
  'Nine Arches Bridge':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Ella%20Nine%20Arch%20Bridge%20Sri%20Lanka.jpg?width=1200',credit:'Kaushiru90 / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Ella_Nine_Arch_Bridge_Sri_Lanka.jpg'},
  'Jaffna Fort':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Jaffna%20Fort.jpg?width=1200',credit:'Lakpura Travels / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:Jaffna_Fort.jpg'},
  'Galle Fort':{url:'https://commons.wikimedia.org/wiki/Special:FilePath/GALLE%20FORT.jpg?width=1200',credit:'Vimukthi SL / Wikimedia Commons',page:'https://commons.wikimedia.org/wiki/File:GALLE_FORT.jpg'},
@@ -291,7 +291,7 @@ const pins=Object.entries(CITY).map(([n,ll])=>{const[x,y]=P(ll);return `<a href=
 return `<svg class="map" viewBox="0 0 ${W} ${H}" role="img" aria-label="Map of Sri Lanka with destinations"><polygon points="${out}" fill="#5B8C3A" stroke="#00534E" stroke-width="3" stroke-linejoin="round"/>${pins}</svg>`}
 function render(){drawNav();let h='';
 if(tab==='home'){h=`<div class="cats">${[['stay','🛏️','Stay'],['eat','🍛','Eat'],['places','🏯','Explore'],['map','🗺️','Map']].map(([k,i,l])=>`<button class="cat" data-go="${k}"><b>${i}</b>${l}</button>`).join('')}</div>
-<div class="sec"><h2>Trending this season</h2></div><div class="rail">${PLACES.slice(0,4).map(placeCard).join('')}</div>
+<div class="sec"><h2>Trending this season</h2></div><div class="rail">${PLACES.filter(p=>DESTINATION_PHOTOS[p.n]).map(placeCard).join('')}</div>
 <div class="sec"><h2>Hidden gems</h2></div><div class="rail">${HOTELS.filter(x=>x.eco).map(hotelCard).join('')}</div>
 <div class="sec"><h2>Must-try dishes</h2></div><div class="rail">${DISHES.map(d=>`<div class="dish"><div style="font-size:30px">${d[1]}</div><b>${d[0]}</b><div class="mute">${d[2]?'🌶️'.repeat(d[2]):'Mild'}</div></div>`).join('')}</div>
 <div class="sec"><h2>Before you go</h2></div><div class="card"><div class="body"><p><b>Emergency:</b> Police 119 · Ambulance 1990 · Tourist Police +94 11 242 1052</p><p class="mute">Temples: remove shoes and hats, cover shoulders and knees, never pose with your back to a Buddha statue.</p></div></div>`}
